@@ -1,0 +1,99 @@
+{
+
+  "if": {
+    "prefix": "if",
+    "body": [
+        "if ${1:condition} then",
+        "begin",
+        "\t$2",
+        "end$0"
+    ],
+    "description": "condition"
+  },
+
+  "begin": {
+    "prefix": "begin",
+    "body": "begin${1}",
+    "description": "begin"
+  },
+
+  "end": {
+    "prefix": "end",
+    "body": "end\n",
+    "description": "end"
+  },
+
+  "int": {
+    "prefix": "int",
+    "body": "int ${1:variabile};$0",
+    "description": "define int variable"
+  },
+
+  "const": {
+    "prefix": "const",
+    "body": "const ${1:name} = ${2:value};$0",
+    "description": "define constant"
+  },
+
+  "then": {
+    "prefix": "then",
+    "body": [
+        "then",
+        "begin",
+        "\t$1",
+        "end$0"
+        ],
+    "description": "if condition is not 0"
+  },
+
+  "while": {
+    "prefix": "while",
+    "body": [
+        "while ${1:condition} do",
+        "begin",
+        "\t$2",
+        "end$0"
+    ],
+    "description": "loop while do"
+  },
+
+  "do": {
+    "prefix": "do",
+    "body": [
+        "do",
+        "begin",
+        "\t$1",
+        "end$0"
+    ],
+    "description": "loop while do"
+  },
+
+  "return": {
+    "prefix": "return",
+    "body": "return ${1:value};$0",
+    "description": "return statement"
+  },
+
+  "print": {
+    "prefix": "print",
+    "body": "print ${1:value};$0",
+    "description": "print to console"
+  },
+
+  "read": {
+    "prefix": "read",
+    "body": "read ${1:variable};$0",
+    "description": "read from console"
+  },
+
+  "function": {
+    "prefix": "function",
+    "body": [
+        "${1:function} ()",
+        "begin",
+        "\t$0",
+        "end"
+    ],
+    "description": "generate function"
+  }
+}

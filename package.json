@@ -1,6 +1,6 @@
 {
-    "name": "splt",
-    "displayName": "splt",
+    "name": "spl",
+    "displayName": "spl",
     "description": "",
     "version": "0.0.1",
     "publisher": "cursova",
@@ -16,6 +16,12 @@
     ],
     "main": "./out/src/extension",
     "contributes": {
+        "snippets": [
+            {
+                "language": "spl",
+                "path": "./spl.json"
+            }
+        ],
         "commands": [{
             "command": "extension.sayHello",
             "title": "Hello World"
