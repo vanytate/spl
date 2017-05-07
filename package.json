@@ -1,0 +1,48 @@
+{
+    "name": "splt",
+    "displayName": "splt",
+    "description": "",
+    "version": "0.0.1",
+    "publisher": "cursova",
+    "engines": {
+        "vscode": "^1.12.0"
+    },
+    "categories": [
+        "Languages"
+    ],
+    "activationEvents": [
+        "onCommand:extension.sayHello",
+        "onLanguage:spl"
+    ],
+    "main": "./out/src/extension",
+    "contributes": {
+        "commands": [{
+            "command": "extension.sayHello",
+            "title": "Hello World"
+        }],
+        "languages": [{
+            "id": "spl",
+            "aliases": ["SPL", "spl"],
+            "extensions": ["spl"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "spl",
+            "scopeName": "spl",
+            "path": "./syntaxes/spl.tmLanguage.json"
+        }]
+    },
+    "scripts": {
+        "vscode:prepublish": "tsc -p ./",
+        "compile": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^2.0.3",
+        "vscode": "^1.0.0",
+        "mocha": "^2.3.3",
+        "@types/node": "^6.0.40",
+        "@types/mocha": "^2.2.32"
+    }
+}

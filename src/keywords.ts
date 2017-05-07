@@ -1,0 +1,1 @@
+export default ['if', 'while', 'return', 'print', 'read', 'begin', 'end', 'int', 'const', 'then', 'do']
