@@ -20,6 +20,7 @@ export class MachineController {
         let subscriptions = []
         vscode.window.onDidChangeTextEditorSelection(this._onEvent, this, subscriptions)
         vscode.window.onDidChangeActiveTextEditor(this._onEvent, this, subscriptions)
+        vscode.workspace.onDidChangeTextDocument(this._onEvent, this, subscriptions)
         this._disposable = vscode.Disposable.from(...subscriptions);
     }
 
@@ -35,7 +36,7 @@ export class MachineController {
     }
 
     _updateDecoration(editor) {
-        if (editor.document.languageId === 'spl') {
+        if (editor && editor.document.languageId === 'spl') {
             let activeDecorationsByColor = []
             for (let p of this._machine.test(editor.document.getText())) {
                 activeDecorationsByColor.push({

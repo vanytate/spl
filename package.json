@@ -2,7 +2,7 @@
     "name": "spl",
     "displayName": "spl",
     "description": "",
-    "version": "0.0.1",
+    "version": "0.5.3",
     "publisher": "cursova",
     "engines": {
         "vscode": "^1.12.0"
@@ -22,21 +22,32 @@
                 "path": "./spl.json"
             }
         ],
-        "commands": [{
-            "command": "extension.sayHello",
-            "title": "Hello World"
-        }],
-        "languages": [{
-            "id": "spl",
-            "aliases": ["SPL", "spl"],
-            "extensions": ["spl"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "spl",
-            "scopeName": "spl",
-            "path": "./syntaxes/spl.tmLanguage.json"
-        }]
+        "commands": [
+            {
+                "command": "extension.sayHello",
+                "title": "Init Project"
+            }
+        ],
+        "languages": [
+            {
+                "id": "spl",
+                "aliases": [
+                    "SPL",
+                    "spl"
+                ],
+                "extensions": [
+                    "spl"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "spl",
+                "scopeName": "spl",
+                "path": "./syntaxes/spl.tmLanguage.json"
+            }
+        ]
     },
     "scripts": {
         "vscode:prepublish": "tsc -p ./",

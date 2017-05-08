@@ -1,11 +1,9 @@
 {
-
   "if": {
     "prefix": "if",
     "body": [
         "if ${1:condition} then",
-        "begin",
-        "\t$2",
+        "\t$0",
         "end$0"
     ],
     "description": "condition"
@@ -19,7 +17,9 @@
 
   "end": {
     "prefix": "end",
-    "body": "end\n",
+    "body": [
+        "end${1:}"
+    ],
     "description": "end"
   },
 
@@ -39,7 +39,6 @@
     "prefix": "then",
     "body": [
         "then",
-        "begin",
         "\t$1",
         "end$0"
         ],

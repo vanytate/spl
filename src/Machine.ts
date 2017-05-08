@@ -42,6 +42,7 @@ export class Machine {
     test(text) {
         let result = []
         let next, currentState
+        let finded = null
         let lines = text.split('\n')
         for (let k = 0; k < lines.length; ++k) {
             let startIndex = 0            
@@ -53,16 +54,26 @@ export class Machine {
                 while (next !== null && ++i < len) {
                     currentState = next                            
                     next = currentState.getNext(line[i])
+                    if (next && next.final) {
+                        finded = i
+                    }
                 }
                 if (next !== null && next.final) {
                     result.push(new Word(startIndex, i, k))
+                    finded = null
                     break
-                    // startIndex = i
                 } else if (currentState.final) {
-                    result.push(new Word(startIndex, i, k))
+                    console.log('thisd')
+                    result.push(new Word(startIndex, i == len ? i - 1 : i, k))
                     next = this._begin
                     startIndex = i
+                    finded = null
                     --i
+                } else if (finded !== null) {
+                    console.log(len)
+                    result.push(new Word(startIndex, finded + 1, k))
+                    finded = null
+                    i = startIndex++
                 } else {
                     i = startIndex++
                 }
