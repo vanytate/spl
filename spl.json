@@ -6,7 +6,7 @@
         "\t$0",
         "end$0"
     ],
-    "description": "condition"
+    "description": "if condition then [code] end"
   },
 
   "begin": {
@@ -25,13 +25,13 @@
 
   "int": {
     "prefix": "int",
-    "body": "int ${1:variabile};$0",
+    "body": "int ${1:variabile}$0",
     "description": "define int variable"
   },
 
   "const": {
     "prefix": "const",
-    "body": "const ${1:name} = ${2:value};$0",
+    "body": "const ${1:name} = ${2:value}$0",
     "description": "define constant"
   },
 
@@ -69,19 +69,19 @@
 
   "return": {
     "prefix": "return",
-    "body": "return ${1:value};$0",
+    "body": "return ${1:value}$0",
     "description": "return statement"
   },
 
   "print": {
     "prefix": "print",
-    "body": "print ${1:value};$0",
+    "body": "print ${1:value}$0",
     "description": "print to console"
   },
 
   "read": {
     "prefix": "read",
-    "body": "read ${1:variable};$0",
+    "body": "read ${1:variable}$0",
     "description": "read from console"
   },
 
