@@ -2,7 +2,7 @@
     "name": "spl",
     "displayName": "spl",
     "description": "",
-    "version": "0.5.3",
+    "version": "0.5.6",
     "publisher": "cursova",
     "engines": {
         "vscode": "^1.12.0"

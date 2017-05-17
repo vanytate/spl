@@ -63,14 +63,12 @@ export class Machine {
                     finded = null
                     break
                 } else if (currentState.final) {
-                    console.log('thisd')
                     result.push(new Word(startIndex, i == len ? i - 1 : i, k))
                     next = this._begin
                     startIndex = i
                     finded = null
                     --i
                 } else if (finded !== null) {
-                    console.log(len)
                     result.push(new Word(startIndex, finded + 1, k))
                     finded = null
                     i = startIndex++
